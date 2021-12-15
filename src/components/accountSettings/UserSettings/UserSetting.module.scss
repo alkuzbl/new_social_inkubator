@@ -1,0 +1,15 @@
+.userSettings {
+  background-color: #fff;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  max-width: 270px;
+  width: 100%;
+  color: black;
+  transform: translateY(-300%);
+  transition: all .5s;
+}
+
+.collapsed {
+  transform: translateY(0);
+}
