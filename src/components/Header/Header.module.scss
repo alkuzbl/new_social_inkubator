@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: #e44d3a;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__searchContainer {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+.logo {
+  max-height: 40px;
+  margin-right: 15px;
+}
