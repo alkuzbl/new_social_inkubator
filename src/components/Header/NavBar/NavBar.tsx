@@ -10,20 +10,39 @@ import notification from './../../../assets/images/iconNavBar/iconNotification.p
 import styles from './NavBar.module.scss'
 
 const navBarMenu = [
-    {id: v1(), title: "Home", path: "/home", icon: home, altAtr: 'home page'},
-    {id: v1(), title: "Projects", path: "/projects", icon: projects, altAtr: 'projects page'},
-    {id: v1(), title: "Video", path: "/video", icon: video, altAtr: 'video'},
-    {id: v1(), title: "Profiles", path: "/profiles", icon: profiles, altAtr: 'profiles page'},
-    {id: v1(), title: "Messages", path: "/messages", icon: messages, altAtr: 'messages page'},
-    {id: v1(), title: "Notification", path: "/notification", icon: notification, altAtr: 'Notification page'},
+    {id: v1(), name:"home", title: "Home", path: "/home", icon: home, altAtr: 'home page'},
+    {id: v1(), name:"projects", title: "Projects", path: "/projects", icon: projects, altAtr: 'projects page'},
+    {id: v1(), name:"video", title: "Video", path: "/video", icon: video, altAtr: 'video'},
+    {id: v1(), name:"profiles", title: "Profiles", path: "/profiles", icon: profiles, altAtr: 'profiles page'},
+    {id: v1(), name:"messages", title: "Messages", path: "", icon: messages, altAtr: 'messages page'},
+    {id: v1(), name:"messages", title: "New post", path: "/posts", icon: messages, altAtr: 'posts'},
+    {id: v1(), name:"notification", title: "Notification", path: "/notification", icon: notification, altAtr: 'Notification page'},
 ]
 
-export const NavBar = () => {
+type NavBarPropsType = {
+    setActive: (active: boolean) => void
+    setCollapsedMessage: (active: boolean) => void
+    collapsedMessage: boolean
+}
+
+export const NavBar = (props: NavBarPropsType) => {
+    const {setActive, setCollapsedMessage, collapsedMessage} = props
+
+    const onClickHandler = (itemName: string)=> {
+        if (itemName === "New post"){
+            setActive(true)
+        }
+        if (itemName === "Messages"){
+            setCollapsedMessage(!collapsedMessage)
+        }
+    }
 
     return <div className={styles.navbar}>
         <ul className={styles.menu}>
             {
-                navBarMenu.map(n => <li className={styles.menu__link}>
+                navBarMenu.map(n => <li key={n.id}
+                                        className={styles.menu__link}
+                                        onClick={()=>onClickHandler(n.title)}>
                     <MenuLink path={n.path} title={n.title} icon={n.icon} alt={n.altAtr}/>
                 </li>)
             }
