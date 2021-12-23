@@ -20,18 +20,15 @@ const navBarMenu = [
 ]
 
 type NavBarPropsType = {
-    setActive: (active: boolean) => void
+
     setCollapsedMessage: (active: boolean) => void
     collapsedMessage: boolean
 }
 
 export const NavBar = (props: NavBarPropsType) => {
-    const {setActive, setCollapsedMessage, collapsedMessage} = props
+    const {setCollapsedMessage, collapsedMessage} = props
 
     const onClickHandler = (itemName: string)=> {
-        if (itemName === "New post"){
-            setActive(true)
-        }
         if (itemName === "Messages"){
             setCollapsedMessage(!collapsedMessage)
         }

@@ -5,12 +5,12 @@ import {SearchInput} from "../common/SearchInput/SearchInput";
 import {UserInfo} from "./UserInfo/UserInfo";
 import {UserSettings} from "../accountSettings/UserSettings/UserSettings";
 import {NavBar} from "./NavBar/NavBar";
-import {ModalWindow} from "../MainPage/PostBar/NewPost/NewPost";
+
 import {Messages} from "../Messages/Messages";
 
 export const Header = () => {
     const [collapsed, setCollapsed] = useState<boolean>(true)
-    const [active, setActive] = useState<boolean>(false)
+
     const [collapsedMessage, setCollapsedMessage] = useState<boolean>(true)
 
     const collapsedSettingsMenu = () => {
@@ -24,7 +24,7 @@ export const Header = () => {
                     <img className={styles.logo} src={logo} alt="logo"/>
                     <SearchInput/>
                 </div>
-                <NavBar setActive={setActive}
+                <NavBar
                         setCollapsedMessage={setCollapsedMessage}
                         collapsedMessage={collapsedMessage}
                 />
@@ -32,7 +32,7 @@ export const Header = () => {
                 <UserInfo callBackOnClick={collapsedSettingsMenu}/>
             </div>
         </div>
-        <ModalWindow active={active} setActive={setActive}/>
+
         <Messages collapsedMessage={collapsedMessage} setCollapsedMessage={setCollapsedMessage}/>
 
     </header>

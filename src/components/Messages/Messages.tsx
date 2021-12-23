@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './Messages.module.scss'
 import {Message} from "./Message/Message";
+import {Link} from "react-router-dom";
 
 
 type MessagePropsType = {
@@ -21,6 +22,6 @@ export const Messages = (props: MessagePropsType) => {
             <Message setCollapsedMessage={setCollapsedMessage}/>
             <Message setCollapsedMessage={setCollapsedMessage}/>
         </div>
-        <a className={styles.messages__viewButton} href='#' onClick={()=>setCollapsedMessage(true)} >View All Messages</a>
+        <Link className={styles.messages__viewButton} to='/messages' onClick={()=>setCollapsedMessage(true)} >View All Messages</Link>
     </div>
 }

@@ -1,0 +1,50 @@
+.homePage {
+  padding: 60px 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    transition: all .5s;
+    &.active{
+      opacity: 0;
+    }
+  }
+
+  &__left {
+    max-width: 260px;
+    width: 100%;
+  }
+
+  &__center {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  &__centerTopLine {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #e44d3a;
+  }
+
+  &__newPost {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    border: 1px solid #e6e4e4;
+
+  }
+
+  &__newPostBtn {
+    background-color: #e44d3a;
+    color: #efefef;
+    padding: 0 20px;
+    outline: none;
+    border: none;
+  }
+
+  &__right {
+    max-width: 260px;
+    width: 100%;
+  }
+}
