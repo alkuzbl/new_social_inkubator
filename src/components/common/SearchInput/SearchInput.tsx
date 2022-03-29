@@ -1,18 +1,30 @@
-import React, {ChangeEvent, useState} from "react";
+import React, { ChangeEvent, FC, useState } from 'react';
 
-import styles from './SearchInput.module.scss'
+import styles from './styles/SearchInput.module.scss';
 
-export const SearchInput = () => {
+import iconSearch from 'assets/images/search.svg';
 
-    const [value, setValue] = useState<string>('')
+export const SearchInput: FC = () => {
+  const [value, setValue] = useState<string>('');
 
-    const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => setValue(e.currentTarget.value)
+  const onChangeValue = (e: ChangeEvent<HTMLInputElement>): void =>
+    setValue(e.currentTarget.value);
 
-    const onClickHandler = () => {
-        setValue('')
-    }
-    return <div className={styles.search}>
-        <input className={styles.search__input} type="text" onChange={onChangeValue} value={value}/>
-        <button className={styles.search__btn} onClick={onClickHandler}></button>
+  const onClickHandler = (): void => {
+    setValue('');
+  };
+
+  return (
+    <div className={styles.search}>
+      <input
+        className={styles.search__input}
+        type="text"
+        onChange={onChangeValue}
+        value={value}
+      />
+      <span role="presentation" className={styles.search__btn} onClick={onClickHandler}>
+        <img src={iconSearch} alt="search" />
+      </span>
     </div>
-}
+  );
+};

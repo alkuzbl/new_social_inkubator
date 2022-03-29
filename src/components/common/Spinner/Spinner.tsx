@@ -1,13 +1,12 @@
-import React from "react";
-import './Spinner.scss'
+import React, { FC } from 'react';
+import 'components/common/Spinner/styles/Spinner.scss';
 
-export const Spinner = () => {
-    return <div className='spinner-wrapper'>
-        <div className='spinner'>
-            <div className='bounce1'></div>
-            <div className='bounce2'></div>
-            <div className='bounce3'></div>
-        </div>
+export const Spinner: FC = () => (
+  <div className="spinner-wrapper">
+    <div className="spinner">
+      <div className="bounce1" />
+      <div className="bounce2" />
+      <div className="bounce3" />
     </div>
-
-}
+  </div>
+);

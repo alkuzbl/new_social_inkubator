@@ -1,39 +1,42 @@
-import React, {useState} from "react";
-import styles from './Header.module.scss'
-import logo from './../../assets/images/logoWhite.png'
-import {SearchInput} from "../common/SearchInput/SearchInput";
-import {UserInfo} from "./UserInfo/UserInfo";
-import {UserSettings} from "../accountSettings/UserSettings/UserSettings";
-import {NavBar} from "./NavBar/NavBar";
+import React, { FC, useState } from 'react';
 
-import {Messages} from "../Messages/Messages";
+import logo from '../../assets/images/logoWhite.png';
 
-export const Header = () => {
-    const [collapsed, setCollapsed] = useState<boolean>(true)
+import { NavBar } from './NavBar/NavBar';
+import { UserInfo } from './UserInfo/UserInfo';
 
-    const [collapsedMessage, setCollapsedMessage] = useState<boolean>(true)
+import { Messages, UserSettings, SearchInput } from 'components';
+import styles from 'components/Header/styles/Header.module.scss';
 
-    const collapsedSettingsMenu = () => {
-        setCollapsed(!collapsed)
-    }
+export const Header: FC = () => {
+  const [collapsed, setCollapsed] = useState<boolean>(true);
+  const [collapsedMessage, setCollapsedMessage] = useState<boolean>(true);
 
-    return <header className={styles.header}>
-        <div className='container'>
-            <div className={styles.header__wrapper}>
-                <div className={styles.header__searchContainer}>
-                    <img className={styles.logo} src={logo} alt="logo"/>
-                    <SearchInput/>
-                </div>
-                <NavBar
-                        setCollapsedMessage={setCollapsedMessage}
-                        collapsedMessage={collapsedMessage}
-                />
-                <UserSettings collapsed={collapsed} callBackOnClick={collapsedSettingsMenu}/>
-                <UserInfo callBackOnClick={collapsedSettingsMenu}/>
-            </div>
+  const collapsedSettingsMenu = (): void => {
+    setCollapsed(!collapsed);
+  };
+
+  return (
+    <header className={styles.header}>
+      <div className="container">
+        <div className={styles.header__wrapper}>
+          <div className={styles.header__searchContainer}>
+            <img className={styles.logo} src={logo} alt="logo" />
+            <SearchInput />
+          </div>
+          <NavBar
+            setCollapsedMessage={setCollapsedMessage}
+            collapsedMessage={collapsedMessage}
+          />
+          <UserSettings collapsed={collapsed} callBackOnClick={collapsedSettingsMenu} />
+          <UserInfo callBackOnClick={collapsedSettingsMenu} />
         </div>
+      </div>
 
-        <Messages collapsedMessage={collapsedMessage} setCollapsedMessage={setCollapsedMessage}/>
-
+      <Messages
+        collapsedMessage={collapsedMessage}
+        setCollapsedMessage={setCollapsedMessage}
+      />
     </header>
-}
+  );
+};

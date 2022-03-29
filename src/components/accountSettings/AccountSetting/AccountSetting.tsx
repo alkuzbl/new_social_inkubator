@@ -1,6 +1,3 @@
-import React from "react";
+import React, { FC } from 'react';
 
-
-export const AccountSetting = () => {
-    return <div>Account setting</div>
-}
+export const AccountSetting: FC = () => <div>Account setting</div>;

@@ -1,27 +1,45 @@
-import React from "react";
-import styles from './Messages.module.scss'
-import {Message} from "./Message/Message";
-import {Link} from "react-router-dom";
+import React, { FC } from 'react';
 
+import { Link } from 'react-router-dom';
+
+import { Message } from './Message/Message';
+
+import styles from 'components/Messages/styles/Messages.module.scss';
 
 type MessagePropsType = {
-    collapsedMessage: boolean
-    setCollapsedMessage: (value: boolean) => void
-}
-export const Messages = (props: MessagePropsType) => {
-    const {collapsedMessage, setCollapsedMessage} = props
+  collapsedMessage: boolean;
+  setCollapsedMessage: (value: boolean) => void;
+};
+export const Messages: FC<MessagePropsType> = props => {
+  const { collapsedMessage, setCollapsedMessage } = props;
 
-        const styleMessageActive = collapsedMessage ? styles.messages : `${styles.messages} ${styles.active}`
+  const styleMessageActive = collapsedMessage
+    ? styles.messages
+    : `${styles.messages} ${styles.active}`;
 
-    return <div className={styleMessageActive}>
-        <div className={styles.messages__top}>
-            <button>Clear all</button>
-        </div>
+  const handleClick = (): void => {
+    console.log('Messages button - CLICK!');
+  };
 
-        <div className={styles.messages__wrapper}>
-            <Message setCollapsedMessage={setCollapsedMessage}/>
-            <Message setCollapsedMessage={setCollapsedMessage}/>
-        </div>
-        <Link className={styles.messages__viewButton} to='/messages' onClick={()=>setCollapsedMessage(true)} >View All Messages</Link>
+  return (
+    <div className={styleMessageActive}>
+      <div className={styles.messages__top}>
+        <button type="button" onClick={handleClick}>
+          Clear all
+        </button>
+      </div>
+
+      <div className={styles.messages__wrapper}>
+        <Message setCollapsedMessage={setCollapsedMessage} />
+        <Message setCollapsedMessage={setCollapsedMessage} />
+      </div>
+      <Link
+        className={styles.messages__viewButton}
+        to="/messages"
+        onClick={() => setCollapsedMessage(true)}
+      >
+        View All Messages
+      </Link>
     </div>
-}
+  );
+};

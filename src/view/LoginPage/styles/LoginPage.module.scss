@@ -1,0 +1,37 @@
+.loginPage{
+  background-color: #e75348;
+  height: 100vh;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  &__wrapper{
+    max-width: 900px;
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  &__row{
+    padding: 0 15px;
+    max-width: 50%;
+  }
+  &__logo{
+    margin: 70px 0 30px;
+    max-width: 200px;
+  }
+  &__content{
+    font-size: 16px;
+    line-height: 22px;
+    color: #666666;
+    margin-bottom: 80px;
+  }
+  &__background{
+    margin-bottom: 90px;
+  }
+}
+
+.footer{
+  padding: 20px 0;
+}
