@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
-import { Header } from 'components';
+import { Header, Login } from 'components';
+import { SignUp } from 'components/SignUp/SignUp';
 import { HomePage, MessagesPage, Profiles } from 'view';
 import { LoginPage } from 'view/LoginPage';
 
@@ -25,7 +26,10 @@ export const RootRoute: FC<RootRoutePropsType> = ({ isAuth }) => {
   }
   return (
     <Routes>
-      <Route path="login" element={<LoginPage />} />
+      <Route path="/" element={<LoginPage />}>
+        <Route path="login" element={<Login />} />
+        <Route path="registration" element={<SignUp />} />
+      </Route>
     </Routes>
   );
 };

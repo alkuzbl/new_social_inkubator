@@ -5,7 +5,7 @@ export {
   UserSettings,
 } from './accountSettings';
 
-export { Button, Spinner, UserMessageCard, SearchInput } from './common';
+export { Button, Spinner, UserMessageCard, SearchInput, Input } from './common';
 
 export { Header, MenuLink, UserInfo, NavBar } from './Header';
 
@@ -20,3 +20,11 @@ export { NewPost } from './PostBar';
 export { ProfileContainer } from './ProfileContainer';
 
 export { UserCard } from './UserCard';
+
+export { FormForLogin } from './FormForLogin';
+
+export { Login } from './Login';
+
+export { SignUp } from './SignUp';
+
+export { Form } from './Form';

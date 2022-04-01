@@ -1,4 +1,4 @@
-.loginPage{
+.loginPage {
   background-color: #e75348;
   height: 100vh;
   padding-top: 70px;
@@ -6,32 +6,79 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  &__wrapper{
+
+  &__wrapper {
     max-width: 900px;
     display: flex;
     width: 100%;
     border-radius: 5px;
     background-color: #ffffff;
   }
-  &__row{
+
+  &__row {
     padding: 0 15px;
     max-width: 50%;
+    width: 100%;
   }
-  &__logo{
+
+  &__logo {
     margin: 70px 0 30px;
     max-width: 200px;
   }
-  &__content{
+
+  &__content {
     font-size: 16px;
     line-height: 22px;
     color: #666666;
     margin-bottom: 80px;
   }
-  &__background{
+
+  &__background {
     margin-bottom: 90px;
+  }
+
+  &__boxForm {
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px 50px 70px 0;
+  }
+
+  &__authButton {
+    padding: 7px 10px;
+    color: #000000;
+    background-color: #e5e5e5;
+    font-size: 14px;
+  }
+
+  &__boxFormInner {
+    padding: 0 60px;
+  }
+
+  &__socialLinkItems {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__socialLinkItemsTitle {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
+  &__socialLinkItem {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    color: #ffffff;
+    &:nth-child(2) {
+      background-color: #3B5998;
+    }
+    &:nth-child(3) {
+      background-color: #4099FF;
+    }
   }
 }
 
-.footer{
+.footer {
   padding: 20px 0;
 }
+
