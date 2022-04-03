@@ -1,24 +1,39 @@
-import React, { FC, memo } from 'react';
+import React, { FC } from 'react';
+
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 import styles from 'components/common/Input/styles/Input.module.scss';
 
-type InputForFormPropsType = {
-  className?: string;
-  required?: boolean;
+type NameType =
+  | 'email'
+  | 'password'
+  | 'rememberMe'
+  | 'fullName'
+  | 'country'
+  | 'confirmPassword';
+type AutoCompleteType =
+  | 'on'
+  | 'off'
+  | 'username'
+  | 'new-password'
+  | 'current-password'
+  | 'name'
+  | 'email';
+
+export type InputForFormPropsType = {
   placeholder?: string;
-  name: 'email' | 'password' | 'rememberMe' | 'confirmPassword';
+  style?: React.CSSProperties;
+  errors?: { [key: string]: { message: string } };
+  register?: UseFormRegister<FieldValues>;
+  name: NameType;
   icon: string;
-  register?: any;
-  errors?: any;
   type: 'checkbox' | 'text' | 'password' | 'email';
-  style?: any;
-  autoComplete?: 'on' | 'off' | 'username' | 'new-password' | 'current-password' | 'name';
+  autoComplete?: AutoCompleteType;
 };
 
-export const InputForForm: FC<InputForFormPropsType> = memo(props => {
+export const InputForForm: FC<InputForFormPropsType> = props => {
   const { name, icon, placeholder, register, autoComplete, errors, style, ...rest } =
     props;
-  console.log(errors);
 
   return (
     <div className={styles.inputBox} style={style || {}}>
@@ -30,12 +45,12 @@ export const InputForForm: FC<InputForFormPropsType> = memo(props => {
 
       <input
         className={styles.inputBox__input}
-        {...register(name)}
+        {...(register ? { ...register(name) } : undefined)}
         {...rest}
         placeholder={placeholder && placeholder}
         autoComplete={autoComplete}
       />
-      <div>{errors[name] && errors[name].message}</div>
+      <div className={styles.inputBox__errors}>{!errors || errors[name]?.message}</div>
     </div>
   );
-});
+};
