@@ -1,0 +1,16 @@
+.post{
+
+  &__title{
+    padding: 20px 0 15px;
+    font-size: 18px;
+    color: #333333;
+  }
+  &__content{
+    font-size: 15px;
+    line-height: 24px;
+    color: #666666;
+    span{
+      color: #e44d3a;
+    }
+  }
+}

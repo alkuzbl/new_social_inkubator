@@ -4,12 +4,8 @@ import countryIcon from 'assets/images/country.svg';
 import emailIcon from 'assets/images/email.svg';
 import passwordIcon from 'assets/images/password_icon.svg';
 import userIcon from 'assets/images/user_icon.svg';
-import { CheckBox } from 'components/common/CheckBox/CheckBox';
-import { Form } from 'components/Form';
-import {
-  InputForForm,
-  InputForFormPropsType,
-} from 'components/InputForForm/InputForForm';
+import { CheckBox, Form, InputForForm } from 'components';
+import { InputForFormPropsType } from 'components/InputForForm/types';
 import { signUpValidationSchema } from 'utils/validationShemes';
 
 const styles = {

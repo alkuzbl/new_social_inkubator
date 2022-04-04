@@ -1,0 +1,1 @@
+export { BoxNewPost } from './BoxNewPost';

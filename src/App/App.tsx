@@ -5,7 +5,7 @@ import { RootRoute } from 'routes/RootRoute';
 
 const App: FC = () => (
   <div>
-    <RootRoute isAuth={false} />
+    <RootRoute isAuth />
   </div>
 );
 

@@ -1,0 +1,1 @@
+export { IconForPost } from './IconForPost';

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import { Header, Login } from 'components';
 import { SignUp } from 'components/SignUp/SignUp';
@@ -26,9 +26,10 @@ export const RootRoute: FC<RootRoutePropsType> = ({ isAuth }) => {
   }
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />}>
+      <Route path="/*" element={<LoginPage />}>
         <Route path="login" element={<Login />} />
         <Route path="registration" element={<SignUp />} />
+        <Route path="*" element={<Navigate to="login" />} />
       </Route>
     </Routes>
   );

@@ -1,0 +1,36 @@
+.post{
+  padding: 20px;
+  background-color: #ffffff;
+  &__profileBox{
+    display: flex;
+  }
+  &__profileBoxInner{
+    margin-left: 15px;
+  }
+  &__info{
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__infoIcon{
+    display: flex;
+    justify-content: space-between;
+    max-width: 170px;
+    width: 100%;
+  }
+  &__profileBoxName{
+    font-size: 18px;
+    margin: 2px 0 5px;
+  }
+  &__content{
+    padding-bottom: 15px;
+  }
+  &__icons{
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 20px;
+  }
+}
+
+

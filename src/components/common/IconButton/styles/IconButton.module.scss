@@ -1,0 +1,13 @@
+.button{
+  padding: 3px;
+  background-color: #e44d3a;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &__icon{
+    width: 30px;
+    height: 24px;
+  }
+}

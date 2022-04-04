@@ -1,35 +1,8 @@
 import React, { FC } from 'react';
 
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import { InputForFormPropsType } from './types';
 
 import styles from 'components/common/Input/styles/Input.module.scss';
-
-type NameType =
-  | 'email'
-  | 'password'
-  | 'rememberMe'
-  | 'fullName'
-  | 'country'
-  | 'confirmPassword';
-type AutoCompleteType =
-  | 'on'
-  | 'off'
-  | 'username'
-  | 'new-password'
-  | 'current-password'
-  | 'name'
-  | 'email';
-
-export type InputForFormPropsType = {
-  placeholder?: string;
-  style?: React.CSSProperties;
-  errors?: { [key: string]: { message: string } };
-  register?: UseFormRegister<FieldValues>;
-  name: NameType;
-  icon: string;
-  type: 'checkbox' | 'text' | 'password' | 'email';
-  autoComplete?: AutoCompleteType;
-};
 
 export const InputForForm: FC<InputForFormPropsType> = props => {
   const { name, icon, placeholder, register, autoComplete, errors, style, ...rest } =

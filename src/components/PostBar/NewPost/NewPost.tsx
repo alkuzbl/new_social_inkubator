@@ -3,7 +3,7 @@ import React, { ChangeEvent, FC, useState } from 'react';
 import { Button } from 'components/common/Button/Button';
 import styles from 'components/PostBar/NewPost/styles/NewPost.module.scss';
 
-import 'components/PostBar/NewPost/styles/Modal.scss';
+import 'components/ModalWindow/styles/Modal.scss';
 
 export type InputChangeEventType = ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
