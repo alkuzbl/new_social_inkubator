@@ -38,7 +38,7 @@
 
   &__button {
     height: 100%;
-    padding: 0 12px;
+    //padding: 0 12px;
     background-color: #53d690;
     border: none;
     outline: none;
@@ -49,18 +49,8 @@
 
   &__messageBtn {
     height: 100%;
-    padding: 0 12px;
-    background-color: #e44d3a;
+    //padding: 0 12px;
     width: 35%;
-
-    span{
-      display: block;
-      width: 100%;
-      height: 30px;
-      background-image: url("../../../../assets/images/messageProfile.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-    }
   }
 
     &__link {

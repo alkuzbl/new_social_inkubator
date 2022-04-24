@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 
 import styles from './styles/HomePage.module.scss';
 
-import { ProfileContainer, ModalWindow, Post } from 'components';
+import { ProfileContainer, ModalWindow, Post, TopProfiles, TodoLists } from 'components';
 import { BoxNewPost } from 'components/BoxNewPost/BoxNewPost';
 
 export const HomePage: FC = () => {
@@ -24,10 +24,21 @@ export const HomePage: FC = () => {
 
           <div className={styles.homePage__center}>
             <BoxNewPost openModalNewPost={setActive} />
-            <Post />
+            <div style={{ marginBottom: '20px' }}>
+              <Post />
+            </div>
+            <TopProfiles />
+            <div style={{ marginBottom: '20px' }}>
+              <Post />
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <Post />
+            </div>
           </div>
 
-          <div className={styles.homePage__right}> </div>
+          <div className={styles.homePage__right}>
+            <TodoLists />
+          </div>
         </div>
       </div>
       <ModalWindow active={active} setActive={setActive} />

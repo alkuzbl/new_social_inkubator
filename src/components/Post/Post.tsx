@@ -30,7 +30,7 @@ export const Post: FC = () => {
           <IconForPost icon={icon1} title="Epic coder" />
           <IconForPost icon={pin} title="Belarus" />
         </div>
-        <div>
+        <div style={{ height: '24px', width: '30px' }}>
           <IconButton icon={emailIcon} />
         </div>
       </div>

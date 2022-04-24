@@ -29,3 +29,5 @@ export { BoxNewPost } from './BoxNewPost';
 export { Post } from './Post';
 export { InputForForm } from './InputForForm';
 export { PostContent } from './PostContent';
+export { TopProfiles } from './TopProfiles';
+export { TodoLists } from './TodoLists';
