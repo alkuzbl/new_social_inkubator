@@ -11,11 +11,13 @@ ul[class], ol[class] {
     padding: 0;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
-    margin: 0;
-}
+
 
 ul[class] {
+    list-style: none;
+}
+ul, ol {
+    padding: 0;
     list-style: none;
 }
 
@@ -33,7 +35,6 @@ a{
 }
 
 
-
 body{
     line-height: 1;
     font-family: 'Source Sans Pro', sans-serif;
@@ -41,11 +42,15 @@ body{
     font-weight: 400;
     background-color: #f2f2f2;
 }
+body, h1, h2, h3, h4, h5, h6, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+}
 .container{
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
+
 h3{
     font-size: 16px;
     padding: 15px 20px;

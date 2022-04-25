@@ -20,6 +20,7 @@ export const RootRoute: FC<RootRoutePropsType> = ({ isAuth }) => {
           <Route path="home" element={<HomePage />} />
           <Route path="profiles" element={<Profiles />} />
           <Route path="messages" element={<MessagesPage />} />
+          <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       </>
     );

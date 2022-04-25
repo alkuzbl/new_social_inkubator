@@ -31,3 +31,4 @@ export { InputForForm } from './InputForForm';
 export { PostContent } from './PostContent';
 export { TopProfiles } from './TopProfiles';
 export { TodoLists } from './TodoLists';
+export { Task } from './Task';
